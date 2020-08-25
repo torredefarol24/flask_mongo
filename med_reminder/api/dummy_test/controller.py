@@ -1,3 +1,5 @@
+from med_reminder.bootstrap.logger import logger
+
 def get_dummy_test():
       context = {
             "success" : True,
