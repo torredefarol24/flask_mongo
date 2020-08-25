@@ -1,1 +1,0 @@
-from med_reminder import med_reminder_app

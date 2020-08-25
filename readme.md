@@ -1,11 +1,14 @@
 <h4>Install Dependencies</h4>
+
 ```
 $ pip install -r requirements.txt
 ```
 
-<h4>Start App</h4>
+<h4>Start App (DEV Mode)</h4>
+
 ```
-$ export FLASK_APP=med_reminder.py
+$ export FLASK_APP=server.py
 $ export FLASK_ENV=development
-$ flask run
+$ export FLASK_DEBUG=1
+$ flask run --host=127.0.0.1 --port=6000
 ```
