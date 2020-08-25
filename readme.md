@@ -13,7 +13,7 @@ $ touch med_reminder/cred_vals/db.py
 <h4> Update <strong>cred_vals/db.py</strong></h4>
 
 ```
-DBURL  = "<YOUR_MONGO_CONN_URI>"
+DBURL = "<YOUR_MONGO_CONN_URI>"
 ```
 
 <h4>Export App Vals</h4>
@@ -21,7 +21,7 @@ DBURL  = "<YOUR_MONGO_CONN_URI>"
 ```
 $ export FLASK_APP=server.py && export FLASK_ENV=development && export FLASK_DEBUG=1
 ```
-
+---------------------
 <h4>Start App (Dev Mode)</h4>
 
 ```

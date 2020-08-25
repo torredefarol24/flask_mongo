@@ -11,7 +11,6 @@ def get_users():
             logger.error('User::get_users %s', excp)
             ctr_resp = prepare_controller_resp(500, None, "Something Went Wrong")
             return ctr_resp
-      pass
 
 def create_user(data):
       try :

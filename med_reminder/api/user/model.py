@@ -1,6 +1,5 @@
 from med_reminder.bootstrap.mongo_connection import mongo as mdb
 
-
 user_coll = mdb.db.users
 required_fields = ['name', 'phone']
 
