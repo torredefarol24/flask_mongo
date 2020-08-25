@@ -4,7 +4,19 @@
 $ pip install -r requirements.txt
 ```
 
-<h4>Set App Vals</h4>
+<h4> Create File for storing DB Info</h4>
+
+```
+$ touch med_reminder/cred_vals/db.py
+```
+
+<h4> Update <strong>cred_vals/db.py</strong></h4>
+
+```
+DBURL  = "<YOUR_MONGO_CONN_URI>"
+```
+
+<h4>Export App Vals</h4>
 
 ```
 $ export FLASK_APP=server.py && export FLASK_ENV=development && export FLASK_DEBUG=1

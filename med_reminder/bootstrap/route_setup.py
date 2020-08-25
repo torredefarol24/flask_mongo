@@ -1,1 +1,1 @@
-from med_reminder.api.dummy_test import route
+from med_reminder.api.user import route
