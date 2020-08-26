@@ -6,5 +6,4 @@ mdb = MongoEngine()
 med_reminder_app.config['MONGODB_SETTINGS'] = {
     'host' : DBURL
 }
-
 mdb.init_app(med_reminder_app)

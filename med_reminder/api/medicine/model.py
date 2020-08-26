@@ -5,9 +5,7 @@ class Medicine:
 
       def get():
             medicine_list = MedicineMDB.objects()
-            meds = presaved_df(medicine_list)
-            return meds
-            # return medicine_list
+            return presaved_df(medicine_list)
 
       def create(data):
             new_med = MedicineMDB(
@@ -15,5 +13,4 @@ class Medicine:
                   group_name=data['group_name'],
                   med_type=data['med_type']
                   ).save()
-            created_med = postsaved_df(new_med)
-            return created_med
+            return postsaved_df(new_med)

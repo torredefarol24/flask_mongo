@@ -5,14 +5,13 @@ class User:
 
       def get():
             users_list = UserMDB.objects()
-            users = presaved_df(users_list)
-            return users
-
+            return presaved_df(users_list)
+            
       def create(data):
             new_user = UserMDB(
                   name=data['name'],
                   phone=data['phone'],
                   age=data['age']
                   ).save()
-            created_user = postsaved_df(new_user)
-            return created_user
+            return postsaved_df(new_user)
+            

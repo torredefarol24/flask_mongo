@@ -1,5 +1,5 @@
-def prepare_controller_resp(status_code, data, msg):
-      controller_response = {
+def controller_resp(status_code, data, msg):
+      return {
             "context" : {
                   "success" : True if status_code in (200, 201) else False,
                   "message" : msg,
@@ -7,5 +7,3 @@ def prepare_controller_resp(status_code, data, msg):
             },
             "status_code" : status_code
       }
-
-      return controller_response
