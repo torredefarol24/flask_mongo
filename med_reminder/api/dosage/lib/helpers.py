@@ -2,13 +2,6 @@ from bson.objectid import ObjectId
 from med_reminder.dicts.med_types import MED_KEYS
 import datetime
 
-def med_embdoc_df(med_embdoc):
-      return {
-            "name" : med_embdoc["name"],
-            "group_name" : med_embdoc["group_name"],
-            "med_type_name" : MED_KEYS[med_embdoc["med_type"]]
-      }
-
 def format_obj(dosage_obj):
       return {
             "id" : str(ObjectId(dosage_obj["id"])),
