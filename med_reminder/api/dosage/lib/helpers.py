@@ -1,17 +1,13 @@
-from bson.objectid import ObjectId
 from med_reminder.dicts.med_types import MED_KEYS
+from med_reminder.api.medicine.lib.helpers import format_obj as format_med_obj
 import datetime
 
 def format_obj(dosage_obj):
       return {
-            "id" : str(ObjectId(dosage_obj["id"])),
+            "id" : str(dosage_obj["id"]),
             "amount_bought" : dosage_obj["amount_bought"],
             "frequency" : dosage_obj["frequency"],
-            "medicine" : {
-                  "name" : dosage_obj["medicine"]["name"],
-                  "group_name" : dosage_obj["medicine"]["group_name"],
-                  "med_type_name" : dosage_obj["medicine"]["med_type_name"]
-            },
+            "medicine" : format_med_obj(dosage_obj["medicine"]),
             "quantity" : dosage_obj["quantity"],
             "dose_start_date" : dosage_obj["dose_start_date"].isoformat(),
             "dose_end_date" : dosage_obj["dose_end_date"].isoformat(),

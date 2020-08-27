@@ -7,6 +7,11 @@ def get_dosages_ep():
       resp = controller.get_dosages()
       return jsonify(resp["context"]), resp["status_code"]
 
+@med_reminder_app.route("/api/v1/dosages/<id>", methods=['GET'])
+def get_dosage_byId_ep(id):
+      resp = controller.get_dosage_byId(id)
+      return jsonify(resp["context"]), resp["status_code"]
+
 @med_reminder_app.route("/api/v1/dosages", methods=['POST'])
 def create_dosage_ep():
       resp = controller.create_dosage(request.json)

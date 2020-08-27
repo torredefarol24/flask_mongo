@@ -1,9 +1,9 @@
 from med_reminder.bootstrap.mongo_conn import mdb
-from med_reminder.api.medicine.lib.schema import MedicineEmbDocSchema as Med_EmbDocSch
+from med_reminder.api.medicine.lib.schema import MedicineSchema
 import datetime
 
 class DosageSchema(mdb.Document):
-      medicine = mdb.EmbeddedDocumentField(Med_EmbDocSch)
+      medicine = mdb.ReferenceField(MedicineSchema)
       amount_bought = mdb.IntField(required=True)
       frequency = mdb.IntField(required=True)
       quantity = mdb.IntField(required=True)

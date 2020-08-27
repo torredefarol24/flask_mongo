@@ -10,6 +10,14 @@ def get_medicines():
             logger.error('Medicine::get_medicines %s', excp)
             return controller_resp(500, None, "Something Went Wrong")
 
+def get_medicine_byId(id):
+      try:
+            medicine = Medicine.get_by_id(id)
+            return controller_resp(200, medicine, "Medicine Fetched")
+      except Exception as excp : 
+            logger.error('Medicine::get_medicine_byId %s', excp)
+            return controller_resp(500, None, "Something Went Wrong")
+
 def create_medicine(data):
       try :
             new_med = Medicine.create(data=data)

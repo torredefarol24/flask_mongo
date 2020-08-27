@@ -1,11 +1,6 @@
 from med_reminder.bootstrap.mongo_conn import mdb
 import datetime
 
-class MedicineEmbDocSchema(mdb.EmbeddedDocument):
-      name = mdb.StringField()
-      group_name = mdb.StringField()
-      med_type_name = mdb.StringField()
-
 class MedicineSchema(mdb.Document):
       name = mdb.StringField(required=True, max_length=120)
       group_name = mdb.StringField(max_length=120)

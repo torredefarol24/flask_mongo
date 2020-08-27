@@ -1,12 +1,9 @@
-from bson.objectid import ObjectId
-
 def format_obj(u_obj):
       return {
-            "id" : str(ObjectId(u_obj["id"])),
+            "id" : str(u_obj["id"]),
             "name" : u_obj["name"],
             "phone" : u_obj["phone"],
-            "age" : u_obj['age'],
-            "created_at" : u_obj['created_at'].isoformat()
+            "age" : u_obj['age']
       }
 
 def presaved_df(user_list):

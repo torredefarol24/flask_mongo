@@ -11,3 +11,8 @@ def get_users_ep():
 def create_user_ep():
       resp = controller.create_user(request.json)
       return jsonify(resp["context"]), resp["status_code"] 
+
+@med_reminder_app.route("/api/v1/users/<id>", methods=["GET"])
+def get_user_byId_ep(id):
+      resp = controller.get_user_byId(id)
+      return jsonify(resp["context"]), resp["status_code"]
