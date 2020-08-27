@@ -1,5 +1,5 @@
-from med_reminder.api.medicine.schema import MedicineSchema as MedicineMDB
-from med_reminder.api.medicine.helpers import postsaved_df, presaved_df
+from med_reminder.api.medicine.lib.schema import MedicineSchema as MedicineMDB
+from med_reminder.api.medicine.lib.helpers import postsaved_df, presaved_df
 
 class Medicine:
 

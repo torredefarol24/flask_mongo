@@ -1,11 +1,15 @@
 from med_reminder.bootstrap.mongo_conn import mdb
-from med_reminder.api.user.schema import UserSchema as UserMDB
 import datetime
 
+class MedicineEmbDocSchema(mdb.EmbeddedDocument):
+      name = mdb.StringField()
+      group_name = mdb.StringField()
+      med_type_name = mdb.StringField()
+
 class MedicineSchema(mdb.Document):
-      name = mdb.StringField(unique=True, required=True, max_length=120)
+      name = mdb.StringField(required=True, max_length=120)
       group_name = mdb.StringField(max_length=120)
-      med_type = mdb.StringField(max_length=20)
+      med_type = mdb.IntField(max_length=20)
       created_at = mdb.DateTimeField(default = datetime.datetime.now())
       updated_at = mdb.DateTimeField(default = datetime.datetime.now())
 

@@ -1,14 +1,14 @@
 from bson.objectid import ObjectId
+from med_reminder.dicts.med_types import MED_KEYS
 
 def format_obj(med_obj):
       return {
             "id" : str(ObjectId(med_obj["id"])),
             "name" : med_obj["name"],
             "group_name" : med_obj["group_name"],
-            "med_type" : med_obj['med_type'],
+            "med_type" :   MED_KEYS[med_obj['med_type']],
             "created_at" : med_obj['created_at'].isoformat()
       }
-
 
 def presaved_df(med_list):
       meds = []
