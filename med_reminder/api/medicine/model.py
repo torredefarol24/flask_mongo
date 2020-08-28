@@ -19,11 +19,3 @@ class Medicine:
                   med_type=data['med_type']
                   ).save()
             return postsaved_df(new_med)
-
-      # def create_raw(data):
-      #       return MedicineMDB(
-      #             name=data['name'],
-      #             group_name=data['group_name'],
-      #             med_type=data['med_type']
-      #             ).save()
-            

@@ -17,7 +17,7 @@ def create_prescription_ep():
       resp = controller.create_prescription(request.json)
       return jsonify(resp["context"]), resp["status_code"]
 
-# @med_reminder_app.route("/api/v1.1/prescriptions", methods=['POST'])
-# def create_prescription_wmd_ep():
-#       resp = controller.create_prescription_wmd(request.json)
-#       return jsonify(resp["context"]), resp["status_code"]
+@med_reminder_app.route("/api/v1.1/prescriptions", methods=['POST'])
+def create_prescription_wmd_ep():
+      resp = controller.create_prescription_wmd(request.json)
+      return jsonify(resp["context"]), resp["status_code"]
