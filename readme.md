@@ -23,6 +23,12 @@ make db
 make app
 ```
 
+5. Stop DB & App
+
+```
+make stop
+```
+
 ---
 
 <h1> API DOCUMENTATION</h1>

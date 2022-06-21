@@ -8,5 +8,4 @@ app.config['MONGODB_SETTINGS'] = {
 	'port': 27017
 }
 
-conn = mdb.init_app(app)
-print("DBCONN", conn)
+mdb.init_app(app)

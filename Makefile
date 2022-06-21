@@ -2,14 +2,14 @@ init_network:
 	docker network create --subnet=172.30.0.0/16 med_reminder || true
 
 app:
-	docker run -it -p 6161:6161 --rm \
+	docker run -d -p 6161:6161 --rm \
 		--ip 172.30.1.1 --net med_reminder \
 		--mount type=bind,source="$(shell pwd)",target=/usr/src/app,readonly \
 		--name app \
 		med_reminder:dev
 
 db:
-	docker run -it -p 27017:27017 --rm \
+	docker run -d -p 27017:27017 --rm \
 		--ip 172.30.1.2 --net med_reminder \
 		--name db_mongo	mongo:5.0.9
 		
