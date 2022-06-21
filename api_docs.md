@@ -1,33 +1,4 @@
-<h1>SETUP & INSTALLATION </h1>
-1. Build Image
-
-```
-make build
-```
-
-2. Create Network
-
-```
-make init_network
-```
-
-3. Start DB container
-
-```
-make db
-```
-
-4. Start App container
-
-```
-make app
-```
-
----
-
-<h1> API DOCUMENTATION</h1>
-
-<ul><li>Users</li></ul>
+<h1>Users</h1>
 
 <p>Get Users</p>
 
@@ -56,9 +27,8 @@ curl --request POST \
 }'
 ```
 
----
+<h1>Medicine</h1>
 
-<ul><li>Medicine</li></ul>
 <p>Get Medicine</p>
 
 ```
@@ -88,9 +58,7 @@ curl --request POST \
 
 ```
 
----
-
-<ul><li>Dosage</li></ul>
+<h1>Dosage</h1>
 
 <p>Get Dosages</p>
 
@@ -138,7 +106,7 @@ curl --request POST \
 }'
 ```
 
-<ul><li>Prescription</li></ul>
+<h1>Prescription</h1>
 
 <p> Get Prescriptions</p>
 

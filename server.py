@@ -1,4 +1,4 @@
-from med_reminder.main.app import med_reminder_app
+from src.main.app import app
 
 if __name__ == '__main__':
-      med_reminder_app.run(host='0.0.0.0')
+	app.run()
