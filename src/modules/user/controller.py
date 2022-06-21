@@ -1,6 +1,6 @@
 from src.modules.user.model import User
 from src.utils.logger import logger
-from src.utils.prepare_ctx import controller_resp
+from src.utils.response import controller_resp
 
 
 def get_users():
