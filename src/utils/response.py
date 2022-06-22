@@ -12,4 +12,4 @@ def controller_resp(status_code, data, msg):
 	}
 
 def json_resp(resp):
-		return jsonify(resp["context"]), resp["status_code"]
+	return jsonify(resp["context"]), resp["status_code"]

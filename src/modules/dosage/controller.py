@@ -15,7 +15,9 @@ def get_dosages():
 def get_dosage_byId(id):
 	try:
 		dosage = Dosage.get_by_id(id)
-		return controller_resp(200, dosage, "Dosage Fetched")
+		status_code = 200 if dosage else 404
+		message = "Dosage Fetched" if dosage else "Dosage Not Found"
+		return controller_resp(status_code, dosage, message)
 	except Exception as excp:
 		logger.error('Dosage::get_dosage %s', excp)
 		return controller_resp(500, None, "Something went wrong")
@@ -28,6 +30,8 @@ def __getMed_create_dosage(med, dose_data):
 def create_dosage(data):
 	try:
 		found_med = Medicine.get_by_id(data["medicine"])
+		if (not found_med):
+			return controller_resp(404, {}, "Medicine not found")
 		created_dosage = __getMed_create_dosage(found_med, dose_data=data)
 		return controller_resp(201, created_dosage, "Dosage Created")
 	except Exception as excp:

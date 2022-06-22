@@ -14,7 +14,9 @@ def get_medicines():
 def get_medicine_byId(id):
 	try:
 		medicine = Medicine.get_by_id(id)
-		return controller_resp(200, medicine, "Medicine Fetched")
+		status_code = 200 if medicine else 404
+		message = "Medicine Fetched" if medicine else "Medicine Not Found"
+		return controller_resp(status_code, medicine, message)
 	except Exception as excp : 
 		logger.error('Medicine::get_medicine_byId %s', excp)
 		return controller_resp(500, None, "Something Went Wrong")

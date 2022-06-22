@@ -11,7 +11,7 @@ class Prescription:
 	
 	def get_by_id(id):
 		presc = PrescriptionMDB.objects(id=ObjectId(id)).first()
-		return postsaved_df(presc)
+		return postsaved_df(presc) if presc else None
 
 	def create(user, dose):
 		created_pres = PrescriptionMDB(

@@ -2,11 +2,16 @@ from src.config.med_types import MED_KEYS
 
 
 def format_obj(med_obj):
+	if med_obj['med_type'] in MED_KEYS:
+		med_type = MED_KEYS[med_obj['med_type']]
+	else:
+		med_type = MED_KEYS[3]
+	
 	return {
 		"id" : str(med_obj["id"]),
 		"name" : med_obj["name"],
 		"group_name" : med_obj["group_name"],
-		"med_type" :   MED_KEYS[med_obj['med_type']],
+		"med_type" : med_type
 	}
 
 def presaved_df(med_list):

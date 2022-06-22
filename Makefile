@@ -2,7 +2,7 @@ init_network:
 	docker network create --subnet=172.30.0.0/16 med_reminder || true
 
 app:
-	docker run -d -p 6161:6161 --rm \
+	docker run -it -p 6161:6161 --rm \
 		--ip 172.30.1.1 --net med_reminder \
 		--mount type=bind,source="$(shell pwd)",target=/usr/src/app,readonly \
 		--name app \

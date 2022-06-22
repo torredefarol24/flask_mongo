@@ -23,6 +23,8 @@ make db
 make app
 ```
 
+The app will start on <blockquote> 127.30.1.1:6161 </blockquote>
+
 5. Stop DB & App
 
 ```
@@ -176,7 +178,7 @@ curl --request POST \
 
 ```
 curl --request POST \
-  --url http://127.30.1.1:6161/api/v1.1/prescriptions/ \
+  --url http://127.30.1.1:6161/api/v1.1/prescriptions \
   --header 'Content-Type: application/json' \
   --data '{
 	"user": "5f4841da6e0bb4574f6b6a2a",

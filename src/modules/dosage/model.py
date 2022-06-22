@@ -1,6 +1,6 @@
 from bson.objectid import ObjectId
 from src.modules.dosage.lib.helpers import (postsaved_df, presaved_df,
-                                                 tentative_end_date)
+                                            tentative_end_date)
 from src.modules.dosage.lib.schema import DosageSchema as DosageMDB
 
 
@@ -12,7 +12,7 @@ class Dosage:
 
 	def get_by_id(id):
 		dosage = DosageMDB.objects(id=ObjectId(id)).first()
-		return postsaved_df(dosage)
+		return postsaved_df(dosage) if dosage else None
 
 	def create(data, med):
 		new_dosage = DosageMDB(

@@ -11,7 +11,7 @@ class Medicine:
 
 	def get_by_id(id):
 		medicine = MedicineMDB.objects(id=ObjectId(id)).first()
-		return postsaved_df(medicine)
+		return postsaved_df(medicine) if medicine else None
 
 	def create(data):
 		new_med = MedicineMDB(

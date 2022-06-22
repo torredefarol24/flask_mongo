@@ -14,7 +14,9 @@ def get_users():
 def get_user_byId(id):
 	try:
 		user = User.get_by_id(id)
-		return controller_resp(200, user, "User Fetched")
+		status_code = 200 if user else 404
+		message = "User Fetched" if user else "User Not Found"
+		return controller_resp(status_code, user, message)
 	except Exception as excp : 
 		logger.error('User::get_user_byId %s', excp)
 		return controller_resp(500, None, "Something Went Wrong")

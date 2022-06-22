@@ -7,12 +7,11 @@ class User:
 
 	def get():
 		users_list = UserMDB.objects()
-		# return users_list
 		return presaved_df(users_list)
 	
 	def get_by_id(id):
 		user = UserMDB.objects(id=ObjectId(id)).first()
-		return postsaved_df(user)
+		return postsaved_df(user) if user else None
 
 	def create(data):
 		new_user = UserMDB(
